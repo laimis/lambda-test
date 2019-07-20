@@ -15,20 +15,11 @@ namespace Core
 			_toMonitor = arr.ToDictionary(a => a.Symbol, a => a);
 		}
 
-		public IEnumerable<string> CryptoToMonitor()
-		{
-			return _toMonitor.Keys;
-		}
+		public IEnumerable<string> CryptoToMonitor() => _toMonitor.Keys;
 
-		public int GetHigh(string symbol)
-		{
-			return _toMonitor[symbol].High;
-		}
+		public int GetHigh(string symbol) => _toMonitor[symbol].High;
 
-		public int GetLow(string symbol)
-		{
-			return _toMonitor[symbol].Low;
-		}
+		public int GetLow(string symbol) => _toMonitor[symbol].Low;
 
 		private struct LowHigh
 		{
