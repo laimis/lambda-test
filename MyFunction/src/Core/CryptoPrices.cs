@@ -17,9 +17,7 @@ namespace Core
 
 			var content = await result.Content.ReadAsStringAsync();
 
-			var prices = JsonConvert.DeserializeObject<Prices>(content);
-
-			return prices;
+			return JsonConvert.DeserializeObject<Prices>(content);
 		}
 	}
 }

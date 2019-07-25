@@ -35,6 +35,11 @@ namespace Core
 		private async Task<string> ExecuteCheck(string symbol)
 		{
 			var price = await this.PriceService.GetAsync(symbol);
+			if (price == null)
+			{
+				return $"{symbol} prices unavailable";
+			}
+
 			var sellTriggered = false;
 			var buyTriggered = false;
 
